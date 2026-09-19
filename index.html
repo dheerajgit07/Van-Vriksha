@@ -2,12 +2,111 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="/src/style.css" rel="stylesheet">
+    
+    <!-- **************************************************** -->
+    <!-- 1. ICON REMOVAL & NEW FAVICON SETTINGS -->
+    <!-- (React icon line for /favicon.svg has been removed) -->
+    <!-- **************************************************** -->
+    <!-- NOTE: You must place your custom tree icon file (e.g., a Banyan/Tree of Life emblem) 
+         at /src/assets/vanvriksha/vanvriksha_icon.png for this link to work. -->
+    <link rel="icon" type="image/png" href="/src/assets/vanvriksha/vanvriksha_icon.png" />
+    <!-- **************************************************** -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vanvirkisha</title>
+    <link href="/src/style.css" rel="stylesheet">
+    
+    <!-- **************************************************** -->
+    <!-- 2. PRIMARY SEO & LOCAL KEYWORDS -->
+    <!-- **************************************************** -->
+    <!-- Updated Title using provided business name and ranking -->
+    <title>Van Vriksha Landscaping | Top Rated Landscape Designer in Karnal, Haryana</title>
+    
+    <!-- Compelling Meta Description including location, rating, and services -->
+    <meta name="description" content="Van Vriksha Landscaping: 5-Star Rated Landscape Designers creating cozy green spaces in Karnal and Haryana. Expert garden design and installation for your home or business. Servicing Karnal and nearby areas." />
+    
+    <!-- Local & Functional Keywords for Search Engines -->
+    <meta name="keywords" content="landscaping, landscape designer, Karnal, Haryana, garden design, green spaces, terrace garden, balcony transformation, Van Vriksha, garden installation, 5-star landscaping, sustainable gardens, native plants, landscape architecture Haryana" />
+    
+    <meta name="author" content="Van Vriksha Landscaping" />
+    <link rel="canonical" href="https://vanvrikshalandscaping.com" />
+    <!-- **************************************************** -->
+
+    <!-- **************************************************** -->
+    <!-- 3. SOCIAL MEDIA METADATA (OPEN GRAPH & TWITTER) -->
+    <!-- **************************************************** -->
+    <!-- For Facebook, LinkedIn, WhatsApp shares -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Van Vriksha Landscaping | Top Rated Designer in Karnal, Haryana" />
+    <meta property="og:description" content="Transform your space with expert landscape design in Haryana. 5-Star rated. Servicing Karnal and surrounding areas." />
+    <meta property="og:url" content="https://vanvrikshalandscaping.com" />
+    <!-- User Note: Please provide a branded OG image at /src/assets/vanvriksha/og_image.jpg -->
+    <meta property="og:image" content="/src/assets/vanvriksha/og_image.jpg" />
+    <meta property="og:site_name" content="Van Vriksha Landscaping" />
+    
+    <!-- For Twitter shares -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Van Vriksha Landscaping | Haryana" />
+    <meta name="twitter:description" content="Expert landscape design in Karnal. Create your dream green space with 5-Star rated designers." />
+    <!-- User Note: Please provide a branded OG image at /src/assets/vanvriksha/og_image.jpg -->
+    <meta name="twitter:image" content="/src/assets/vanvriksha/og_image.jpg" />
+    <!-- **************************************************** -->
+
+    <!-- **************************************************** -->
+    <!-- 4. STRUCTURED DATA (JSON-LD) for Local Business (Google Maps) -->
+    <!-- **************************************************** -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Van Vriksha Landscaping",
+      "image": [
+        "https://vanvrikshalandscaping.com/src/assets/vanvriksha/vanvriksha_logo.jpg"
+      ],
+      "url": "https://vanvrikshalandscaping.com",
+      "telephone": "[User: Add Place Phone Number Here]", 
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2250, Sector 7",
+        "addressLocality": "Karnal",
+        "addressRegion": "Haryana",
+        "postalCode": "132001",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "29.6800", 
+        "longitude": "76.9900" 
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00", 
+        "closes": "20:00" 
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "37"
+      },
+      "areaServed": {
+        "@type": "Text",
+        "description": "Karnal and nearby areas"
+      }
+    }
+    </script>
+    <!-- **************************************************** -->
+
   </head>
   <body>
+    <!-- Main application root -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
