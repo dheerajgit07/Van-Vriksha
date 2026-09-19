@@ -44,9 +44,9 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-[700px] lg:min-h-[750px] flex items-center font-sans overflow-hidden">
+    <section className="relative w-full h-[85vh] min-h-[600px] lg:min-h-[750px] flex items-end sm:items-center font-sans overflow-hidden">
       
-      {/* Background Auto-Changing Images with Increased Brightness */}
+      {/* Background Auto-Changing Images */}
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -59,19 +59,31 @@ export default function Hero() {
             alt={`Van Vriksha Landscaping ${index + 1}`}
             className="w-full h-full object-cover object-center brightness-110 contrast-105"
           />
-          {/* Light overlay for clean contrast */}
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-black/25 sm:bg-black/20" />
         </div>
       ))}
 
-      {/* Hero Overlay Content */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pt-28 sm:pt-32 lg:pt-36 pb-12">
+      {/* Top Floating Pill for Mobile View (Fixes text truncation) */}
+      <div className="absolute top-20 inset-x-3 sm:hidden z-10 flex items-center justify-between gap-1 bg-[#FAF7F2]/90 backdrop-blur-md border border-[#2D8425]/30 px-3 py-1.5 rounded-full text-[10px] font-semibold text-[#1D461A] shadow-lg">
+        <span className="truncate font-bold text-[#1D461A]">Van Vriksha</span>
+        <div className="flex items-center gap-1 text-[#2D8425] shrink-0">
+          <MapPin className="w-3 h-3" />
+          <span>Karnal</span>
+        </div>
+        <div className="flex items-center gap-1 text-amber-600 shrink-0">
+          <Star className="w-3 h-3 fill-current text-amber-500" />
+          <span>5.0 (37)</span>
+        </div>
+      </div>
+
+      {/* Hero Content Container */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-12">
         
-        {/* Compact Creamy Glass Card Container */}
-        <div className="max-w-xs sm:max-w-sm bg-[#FAF7F2]/90 backdrop-blur-md border border-[#2D8425]/20 p-4 sm:p-5 rounded-2xl shadow-2xl space-y-3 text-[#1D461A]">
+        {/* Creamy Glass Card - Compact on Mobile, Detailed on Desktop */}
+        <div className="w-full max-w-xs sm:max-w-sm bg-[#FAF7F2]/90 backdrop-blur-md border border-[#2D8425]/20 p-3.5 sm:p-5 rounded-2xl shadow-2xl space-y-2.5 sm:space-y-3 text-[#1D461A] mx-auto sm:mx-0">
           
-          {/* Rating Badge */}
-          <div className="inline-flex items-center gap-1.5 bg-[#E3F4E1] border border-[#2D8425]/30 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-bold text-[#1D461A]">
+          {/* Rating Badge (Desktop Only) */}
+          <div className="hidden sm:inline-flex items-center gap-1.5 bg-[#E3F4E1] border border-[#2D8425]/30 px-2.5 py-1 rounded-full text-xs font-bold text-[#1D461A]">
             <div className="flex text-amber-500">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-3 h-3 fill-current" />
@@ -82,19 +94,19 @@ export default function Hero() {
             <span>37 Reviews</span>
           </div>
 
-          {/* Location */}
-          <div className="flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-[#2D8425]">
+          {/* Location (Desktop Only) */}
+          <div className="hidden sm:flex items-center gap-1 text-xs font-semibold text-[#2D8425]">
             <MapPin className="w-3.5 h-3.5 text-[#2D8425]" />
             <span>Karnal &amp; Nearby Areas, Haryana</span>
           </div>
 
           {/* Business Name */}
-          <h1 className="font-serif text-xl sm:text-2xl font-bold leading-tight text-[#1D461A]">
+          <h1 className="font-serif text-lg sm:text-2xl font-bold leading-tight text-[#1D461A] text-center sm:text-left">
             Van Vriksha Landscaping
           </h1>
 
-          {/* Subheading / Quote */}
-          <p className="text-[11px] sm:text-xs text-[#2C482A] font-normal leading-relaxed italic">
+          {/* Subheading Quote (Desktop Only so Mobile image stays visible) */}
+          <p className="hidden sm:block text-xs text-[#2C482A] font-normal leading-relaxed italic">
             "We provide the best Landscape designing &amp; implementation services with Architects &amp; Horticulturists on panel. Do it right the first time!"
           </p>
 
@@ -116,8 +128,8 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Feature Bullets */}
-          <div className="pt-2 flex flex-col gap-1.5 text-[10px] sm:text-xs text-[#1D461A] font-medium border-t border-[#E8E2D5]">
+          {/* Feature Bullets (Desktop Only) */}
+          <div className="hidden sm:flex pt-2 flex-col gap-1.5 text-xs text-[#1D461A] font-medium border-t border-[#E8E2D5]">
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#2D8425] shrink-0" />
               <span>Architects &amp; Horticulturists Panel</span>
@@ -132,7 +144,7 @@ export default function Hero() {
       </div>
 
       {/* Slide Navigation Controls */}
-      <div className="absolute bottom-5 right-5 sm:right-10 z-20 flex items-center gap-2 bg-[#FAF7F2]/90 backdrop-blur-md px-3 py-1 rounded-full border border-[#2D8425]/20 shadow-md">
+      <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-10 z-20 flex items-center gap-2 bg-[#FAF7F2]/90 backdrop-blur-md px-3 py-1 rounded-full border border-[#2D8425]/20 shadow-md">
         <button
           onClick={prevSlide}
           className="p-1 text-[#1D461A] hover:text-[#2D8425] transition-colors focus:outline-none"
