@@ -10,27 +10,27 @@ export default function LastBanner() {
           Live a better life outside
         </h2>
 
-        {/* Larger Side-by-Side Videos Container */}
+        {/* Side-by-Side Videos Container */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 w-full">
           
-          {/* First Video */}
-          <div className="w-full aspect-video rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg sm:shadow-2xl border-2 border-[#DCD5C9] bg-gray-900 relative">
+          {/* First Video (YouTube) */}
+          <div className="w-full aspect-video rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg sm:shadow-2xl border-2 border-[#DCD5C9] bg-white relative">
             <iframe
-              src="https://drive.google.com/file/d/1uOViepnRI7Zzj5uyQDAeIw8cPW4kD2Bs/preview"
+              src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_1"
               title="Van Vriksha Landscaping Video 1"
-              className="w-full h-full border-0 bg-transparent"
+              className="w-full h-full border-0"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
 
-          {/* Second Video */}
-          <div className="w-full aspect-video rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg sm:shadow-2xl border-2 border-[#DCD5C9] bg-gray-900 relative">
+          {/* Second Video (YouTube) */}
+          <div className="w-full aspect-video rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg sm:shadow-2xl border-2 border-[#DCD5C9] bg-white relative">
             <iframe
-              src="https://drive.google.com/file/d/1XmWkf6VBrKC96e9lOQMT81RdQ94KJDw6/preview"
+              src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_2"
               title="Van Vriksha Landscaping Video 2"
-              className="w-full h-full border-0 bg-transparent"
+              className="w-full h-full border-0"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
