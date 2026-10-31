@@ -1,4 +1,5 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState, useCallback } from 'react';
+import Preloader from './components/Preloader';
 import Navbar from './components/navbar/Navbar';
 import Hero from './components/hero/Hero';
 
@@ -13,55 +14,84 @@ const Plane = lazy(() => import('./components/my plane/Plane'));
 const Country = lazy(() => import('./components/counter/Country'));
 const LastBanner = lazy(() => import('./components/last-hero-img/LastBanner'));
 const Footer = lazy(() => import('./components/footer/Footer'));
-
-// Smooth Loading Spinner Component
+const Contact = lazy(() => import('./components/contact/Contact'));
+const Policy = lazy(() => import('./components/privacy/Policy'));
+// Smooth Loading Spinner Component (used inside Suspense)
 const LoadingFallback = () => (
-  <div className="w-full py-12 flex items-center justify-center bg-[#F9F6F0]">
-    <div className="w-8 h-8 border-3 border-[#2E5B37]/20 border-t-[#2E5B37] rounded-full animate-spin" />
+  <div className="w-full py-16 flex items-center justify-center bg-[#F9F6F0]">
+    <div className="flex flex-col items-center gap-3">
+      <div className="w-8 h-8 border-[3px] border-emerald-100 border-t-emerald-500 rounded-full animate-spin" />
+      <span className="text-xs text-emerald-600/50 font-medium">Loading…</span>
+    </div>
   </div>
 );
 
 const App = () => {
+  const [preloaderDone, setPreloaderDone] = useState(false);
+
+  const handlePreloaderComplete = useCallback(() => {
+    setPreloaderDone(true);
+  }, []);
+
   return (
-    <div className="relative min-h-screen bg-[#F9F6F0] antialiased">
-      {/* Navbar overlay mode me topmost rahega */}
-      <Navbar />
-      
-      <main>
-        {/* Above-the-fold: Hero ko directly import rakha hai taaki layout shift na ho */}
-        <Hero />
+    <>
+      {/* Preloader shown until assets are ready */}
+      {!preloaderDone && (
+        <Preloader onComplete={handlePreloaderComplete} />
+      )}
 
-        {/* Baki heavy components Suspense me load honge */}
-        <Suspense fallback={<LoadingFallback />}>
-          <Slider />
+      {/* Main site – rendered underneath (hidden until preloader fades) */}
+      <div
+        className={`relative min-h-screen bg-[#F9F6F0] antialiased transition-opacity duration-500 ${
+          preloaderDone ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        {/* Navbar overlay mode me topmost rahega */}
+        <Navbar />
+        
+        <main>
+          {/* Above-the-fold: Hero ko directly import rakha hai taaki layout shift na ho */}
+          <Hero />
 
-          {/* Section IDs for Navbar Smooth Scrolling */}
-          <div id="packages" className="scroll-mt-24">
-            <Packages />
-          </div>
+          {/* Baki heavy components Suspense me load honge */}
+          <Suspense fallback={<LoadingFallback />}>
+            <Slider />
 
-          <Banner />
+            {/* Section IDs for Navbar Smooth Scrolling */}
+            <div id="packages" className="scroll-mt-24">
+              <Packages />
+            </div>
 
-          <div id="contact" className="scroll-mt-24">
-            <Book />
-          </div>
+            <Banner />
 
-          <div id="reviews" className="scroll-mt-24">
-            <Rating />
-          </div>
+            <div id="contact" className="scroll-mt-24">
+              <Book />
+            </div>
 
-          <Yard />
+            <div id="reviews" className="scroll-mt-24">
+              <Rating />
+            </div>
 
-          <div id="plane" className="scroll-mt-24">
-            <Plane />
-          </div>
+            <Yard />
 
-          <Country />
-          <LastBanner />
-          <Footer />
-        </Suspense>
-      </main>
-    </div>
+            <div id="plane" className="scroll-mt-24">
+              <Plane />
+            </div>
+            <div id="contact" className="scroll-mt-24">
+              <Contact />
+            </div>
+
+            <div id="privacy" className="scroll-mt-24">
+              <Policy />
+            </div>
+
+            <Country />
+            <LastBanner />
+            <Footer />
+          </Suspense>
+        </main>
+      </div>
+    </>
   );
 };
 

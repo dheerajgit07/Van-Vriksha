@@ -1,4 +1,5 @@
 import React from "react";
+import LazyImage from "../LazyImage";
 
 const features = [
   {
@@ -48,7 +49,7 @@ export default function YardzenLandingPage() {
               </div>
 
               <h3 className="font-display text-3xl font-bold tracking-tight text-emerald-900 md:text-4xl lg:text-5xl">
-                Van Vriksha Landscaping
+                Vanvriksha Landscaping
               </h3>
 
               <p className="mt-4 text-base leading-relaxed text-emerald-900/80 italic font-serif">
@@ -88,11 +89,11 @@ export default function YardzenLandingPage() {
             {/* Banner Hero Image Right */}
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white via-emerald-300 to-emerald-100 p-1 shadow-lg">
               <div className="relative h-full w-full overflow-hidden rounded-[14px] bg-emerald-100">
-                <img
+                <LazyImage
                   src="https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789793072/AHRPTWkelWV2ACr4t-vLE3Y4OM_Nzghgpl7rwc-4NF6c2oDoNCOIxeGUiHe1jZEF0IQSmRoI2djgc9cdBFXrb10frmSMF08b03m8kTIODCfFgHSxK7rDIhrEIoNa3TSgog4d4w0vOswu_nCZmuZe_s680-w680-h510-rw_hcidrj.webp"
-                  alt="Van Vriksha Landscaping Showcase"
-                  loading="lazy"
-                  className="h-full max-h-[460px] w-full object-cover transition-transform duration-500 hover:scale-105"
+                  alt="Vanvriksha Landscaping Showcase"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  wrapperClassName="h-full max-h-[460px] w-full min-h-[300px]"
                 />
               </div>
             </div>
@@ -100,12 +101,12 @@ export default function YardzenLandingPage() {
         </div>
       </section>
 
-      {/* SECTION 2: Why Van Vriksha Landscaping */}
+      {/* SECTION 2: Why Vanvriksha Landscaping */}
       <section className="w-full px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center md:mb-14">
             <h3 className="font-display text-3xl font-bold tracking-tight text-emerald-900 md:text-5xl">
-              Why Van Vriksha Landscaping?
+              Why Vanvriksha Landscaping?
             </h3>
           </div>
 
@@ -116,14 +117,13 @@ export default function YardzenLandingPage() {
                 className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-emerald-500/10 bg-[#F4EFE6]/70 p-0 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-800/30 hover:shadow-xl"
               >
                 <div>
-                  <div className="aspect-video w-full overflow-hidden bg-emerald-550/10">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
+                  {/* Feature Card Image — LazyImage fills aspect-video area */}
+                  <LazyImage
+                    src={item.image}
+                    alt={item.title}
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    wrapperClassName="aspect-video w-full overflow-hidden bg-emerald-100/20"
+                  />
 
                   <div className="p-6">
                     <h5 className="font-display text-xl font-semibold tracking-tight text-emerald-950">
@@ -170,7 +170,7 @@ export default function YardzenLandingPage() {
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-relaxed text-emerald-900/80 md:text-lg">
-            Our expert Architects and Horticulturists are ready to help! Contact Van Vriksha Landscaping today to discuss your vision for balcony, terrace, or yard design in Karnal.
+            Our expert Architects and Horticulturists are ready to help! Contact Vanvriksha Landscaping today to discuss your vision for balcony, terrace, or yard design in Karnal.
           </p>
 
           <div className="mt-6 md:mt-8">

@@ -82,7 +82,7 @@ export default function Rating() {
         </h2>
         
         <p className="text-sm text-emerald-900/80 max-w-lg">
-          Read genuine reviews from homeowners who turned their balconies and yards into lush green sanctuaries with Van Vriksha Landscaping.
+          Read genuine reviews from homeowners who turned their balconies and yards into lush green sanctuaries with Vanvriksha Landscaping.
         </p>
       </div>
 

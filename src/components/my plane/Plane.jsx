@@ -46,7 +46,7 @@ export default function Plane() {
         <div className="flex w-full flex-col gap-4 sm:flex-row sm:gap-12 sm:items-start pt-2">
           <div className="flex-1">
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#1E2E28] leading-tight">
-              Van Vriksha Transformation
+              Vanvriksha Transformation
             </h2>
           </div>
           <div className="flex-1">

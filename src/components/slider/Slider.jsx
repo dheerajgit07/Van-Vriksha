@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 
 const pressLogos = [
@@ -34,63 +34,75 @@ const pressLogos = [
   },
 ];
 
+// Unique & Visible Images Only (Duplicates Removed)
 const carouselItems = [
   {
     id: 1,
     src: "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791776/IMG_9932_wpxze2.jpg",
-    alt: "Van Vriksha Landscaping Transformation 1",
+    alt: "Vanvriksha Landscaping Transformation 1",
   },
   {
     id: 2,
     src: "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791771/fcf0e8a7-295b-4607-b7f0-6cb7d1e172e5_nt9tkv.jpg",
-    alt: "Van Vriksha Landscaping Transformation 2",
+    alt: "Vanvriksha Landscaping Transformation 2",
   },
   {
     id: 3,
-    src: "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791770/caa1bef8-26fe-4284-9a54-89d4fc7e7c4a_hmucio.jpg",
-    alt: "Van Vriksha Landscaping Transformation 3",
+    src: "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791357/IMG_5881_p38tc6.jpg",
+    alt: "Vanvriksha Landscaping Transformation 3",
   },
   {
     id: 4,
     src: "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791769/dee5bcea-a490-4f9c-ab71-d9f417259966_ut8s2i.jpg",
-    alt: "Van Vriksha Landscaping Transformation 4",
+    alt: "Vanvriksha Landscaping Transformation 4",
   },
   {
     id: 5,
     src: "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791768/88856569-789c-4f2c-b6be-115892db58e7_jg8blc.jpg",
-    alt: "Van Vriksha Landscaping Transformation 5",
+    alt: "Vanvriksha Landscaping Transformation 5",
   },
   {
     id: 6,
     src: "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791765/10bae2e6-6c6c-467e-a18a-aec949b1e5ee_q10pte.jpg",
-    alt: "Van Vriksha Landscaping Transformation 6",
+    alt: "Vanvriksha Landscaping Transformation 6",
   },
   {
     id: 7,
     src: "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791766/7a1881b3-7da7-45f1-be79-2f555050448c_nqsxiq.jpg",
-    alt: "Van Vriksha Landscaping Transformation 7",
+    alt: "Vanvriksha Landscaping Transformation 7",
   },
   {
     id: 8,
     src: "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791370/IMG_5887_vppeah.jpg",
-    alt: "Van Vriksha Landscaping Transformation 8",
+    alt: "Vanvriksha Landscaping Transformation 8",
   },
   {
-    id: 9,
-    src: "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791365/IMG_5883_vbvofq.jpg",
-    alt: "Van Vriksha Landscaping Transformation 9",
-  },
-  {
-    id: 10,
-    src: "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791350/IMG_5885_youmf9.jpg",
-    alt: "Van Vriksha Landscaping Transformation 10",
-  },
-  {
-    id: 11,
-    src: "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791326/EU4A8352.JPG_won0a0.jpg",
-    alt: "Van Vriksha Landscaping Transformation 11",
+    id: 8,
+    src: "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SgrLD1LSbfbvLXCexcLqtx_RXuejlj2Pf-qAZi_VLbeA8RpxOD8hV6SF5zR3nRiJDyCCoMD1jZL4zrULdVuFjnyWb9YPZg0Htrd41868ilZqinkTkZeRJaGfYkadvgMDyh9SljSXnQvQQ=s680-w680-h510-rw",
+    alt: "Vanvriksha Landscaping Transformation 8",
   },
 ];
+
+function SliderImage({ src, alt, className, wrapperClassName }) {
+  const [imgSrc, setImgSrc] = useState(src);
+
+  return (
+    <div className={`relative overflow-hidden ${wrapperClassName}`}>
+      <img
+        src={imgSrc}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onError={() =>
+          setImgSrc(
+            "https://res.cloudinary.com/dkvzrmzkl/image/upload/v1789791771/fcf0e8a7-295b-4607-b7f0-6cb7d1e172e5_nt9tkv.jpg"
+          )
+        }
+        className={`h-full w-full object-cover ${className}`}
+      />
+    </div>
+  );
+}
 
 export default function Slider() {
   const sliderRef = useRef(null);
@@ -104,7 +116,7 @@ export default function Slider() {
     const ctx = gsap.context(() => {
       gsap.to(slider, {
         x: () => -(totalWidth / 2),
-        duration: 35,
+        duration: 30,
         ease: "none",
         repeat: -1,
         modifiers: {
@@ -134,6 +146,7 @@ export default function Slider() {
                   src={logo.src}
                   alt={`${logo.name} logo`}
                   loading="lazy"
+                  decoding="async"
                   className="max-h-10 w-auto object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                 />
               </div>
@@ -148,7 +161,7 @@ export default function Slider() {
           The Smartest Path to a Yard You Love
         </h1>
         <p className="font-body mt-4 w-[90%] pb-8 text-base text-gray-700 md:max-w-[65%] md:text-lg">
-          Van Vriksha Landscaping is the premier Haryana landscape design studio that pairs you with expert architects and horticulturists to create custom plans for your balcony, terrace, or yard—doing it right the first time.
+          Vanvriksha Landscaping is the premier Haryana landscape design studio that pairs you with expert architects and horticulturists to create custom plans for your balcony, terrace, or yard—doing it right the first time.
         </p>
 
         {/* GSAP Continuous Slider Container */}
@@ -169,11 +182,11 @@ export default function Slider() {
                   href="#"
                   className="group block rounded-xl transition-transform duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 >
-                  <img
+                  <SliderImage
                     src={item.src}
                     alt={item.alt}
-                    loading="lazy"
-                    className="h-[400px] w-full rounded-2xl object-cover shadow-md md:h-[500px]"
+                    className="rounded-2xl object-cover shadow-md"
+                    wrapperClassName="h-[400px] w-full rounded-2xl md:h-[500px]"
                   />
                 </a>
               </div>

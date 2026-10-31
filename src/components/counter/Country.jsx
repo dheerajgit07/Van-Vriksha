@@ -5,7 +5,7 @@ const locations = [
     id: 'austin-tx',
     city: 'Austin, TX',
     clients: 'Stacey & Sean',
-    link: 'https://yardzen.com/yzblog/low-maintenance-backyard-austin-tx',
+    link: '/',
     mainImg: 'https://images.ctfassets.net/6dgb2p7c933b/3Dg0eZCi55jZoRWDcvJIfK/4a364a7ec2941bac8a601be1ed2cf598/TL_yqdx4g.jpg?w=828&q=75&fm=webp&fit=fill',
     avatarImg: 'https://images.ctfassets.net/6dgb2p7c933b/JKD7YLlIrbmGrLzNFYioT/e9ed461196df86f9486aabc44cd282e0/Austin-Circle.jpg?w=150&q=75&fm=webp&fit=fill'
   },

@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand Info & Business Mission */}
           <div className="lg:col-span-2 flex flex-col gap-4 pr-0 lg:pr-8">
             <a href="/" className="font-serif text-3xl font-bold tracking-tight text-white">
-              Van Vriksha Landscaping
+              Vanvriksha Landscaping
             </a>
             <p className="text-xs text-emerald-100 italic leading-relaxed bg-[#244D3A] p-4 rounded-xl border border-[#376C53]">
               "We provide with passion and dedication to our customers the best Landscape designing and implementation services, with experts i.e., Architects and Horticulturists on our panel. Do it right the first time!"
@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <h4 className="font-serif font-semibold text-lg text-emerald-200">Address &amp; Location</h4>
             <address className="not-italic text-xs text-gray-300 space-y-1.5 leading-relaxed">
-              <p className="font-semibold text-white">Van Vriksha Landscaping HQ</p>
+              <p className="font-semibold text-white">Vanvriksha Landscaping HQ</p>
               <p>2250, Sector 7, Karnal,</p>
               <p>Phusgarh Part, Haryana 132001</p>
               <p className="pt-2 text-emerald-300 font-semibold">Areas served: Karnal and nearby areas</p>
@@ -71,7 +71,7 @@ export default function Footer() {
         {/* Bottom Bar Section */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-300">
           <div>
-            &copy; {new Date().getFullYear()} Van Vriksha Landscaping. All rights reserved.
+            &copy; {new Date().getFullYear()} Vanvriksha Landscaping. All rights reserved.
           </div>
           <div>
             Registered Landscape Designers in Haryana • Sector 7, Karnal

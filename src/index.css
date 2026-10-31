@@ -67,3 +67,36 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #2D8425;
 }
+
+/* Hide scrollbar utility (for horizontal carousels) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Skeleton shimmer for lazy images */
+@keyframes shimmer {
+  0% { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #e8e3da 0px,
+    #f0ebe3 40px,
+    #e8e3da 80px
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
+/* Preloader fade override */
+#preloader-root {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}

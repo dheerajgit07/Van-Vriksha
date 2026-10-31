@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import LazyImage from "../LazyImage";
 
 const categories = ["Backyard", "Front Yard", "Full Yard", "Small Space"];
 
@@ -43,7 +44,7 @@ export default function Packages() {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center">
         {/* Title */}
         <h1 className="font-display text-center text-3xl font-bold tracking-tight text-gray-900 md:text-5xl">
-          Van Vriksha Design Packages
+          Vanvriksha Design Packages
         </h1>
 
         {/* Category Filter Tabs */}
@@ -93,11 +94,11 @@ export default function Packages() {
 
                 {/* Package Image */}
                 <div className="relative h-64 w-full overflow-hidden rounded-xl bg-gray-100">
-                  <img
+                  <LazyImage
                     src={pkg.image}
                     alt={`${pkg.title} package preview`}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    wrapperClassName="h-full w-full"
                   />
                 </div>
 
